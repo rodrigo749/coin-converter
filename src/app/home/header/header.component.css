@@ -1,0 +1,15 @@
+header {
+  }
+  
+
+  .container {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container img {
+    width: 219px;
+    height: 100px;
+}
