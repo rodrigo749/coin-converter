@@ -1,23 +1,41 @@
 <app-header></app-header>
 
 
-<app-card>
-    <div class="card__card-header">
-        <p class="card__card-title"> {{titleCanadian}}</p>
-    </div>
+<!-- <div *ngFor="let value of arrayValues">
+    <app-card>
+        <div class="card__card-header">
+            <p class="card__card-title"> {{value.name}}</p>
+        </div>
+    
+        <div class="card__card-body">
+            <p> {{valueCanadian}} </p>
+        </div>
+    </app-card>
+</div> -->
 
-    <div class="card__card-body">
-        <p> {{valueCanadian}} </p>
+<div class="wrapper">
+    <div>
+        <app-card [title]="titleCanadian"></app-card>
     </div>
-</app-card>
+    <div >
+        <app-card [title]="titleArgentino"></app-card>
+    </div>
+    <div >
+        <app-card [title]="titleLibra">
+
+        </app-card>
+    </div>
+</div>
+
+
+    
+
+
+
+
+
 
 <!-- <app-card>
-    <div class="card__card-header">
-        <p class="card__card-title"> {{titleCanadian}}</p>
-    </div>
-</app-card>
-
-<app-card>
     <div class="card__card-header">
         <p class="card__card-title"> {{titleCanadian}}</p>
     </div>
