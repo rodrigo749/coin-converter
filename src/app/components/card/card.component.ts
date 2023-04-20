@@ -10,6 +10,6 @@ export class CardComponent {
 
   @Input() title = '';
   @Input() value = '';
-  @Input() variacao = '';
-  @Input() atualizado = '';
+  @Input() variation = '';
+  @Input() update = '';
 }

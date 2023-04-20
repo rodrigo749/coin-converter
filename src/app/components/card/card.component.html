@@ -4,16 +4,16 @@
             <div class="card__card-title"> {{ title }} </div>
         </div>
         <div class="card__card-body">
-            <h4><b> R$5,50 </b></h4>
+            <h4><b> R$ {{ value }} </b></h4>
         </div>
         <div class="card__horizontal-line"></div>
         <div class="wrapper">
             <div class="card__footer-left">
                 <p>Variação %</p>
-                <p>0,11</p>
+                <p>{{ variation }}</p>
             </div>
             <div class="card__footer-right">Atualizado
-                <p>0,11</p>
+                <p> {{ update }}</p>
             </div>
         </div>
 
