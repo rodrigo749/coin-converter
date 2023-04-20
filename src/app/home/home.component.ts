@@ -25,15 +25,12 @@ export class HomeComponent implements OnInit{
   variationPound: any;
   datePound: any;
 
-  
   constructor(private http: HttpClient) { }
-
 
   ngOnInit() {
     this.canadianValues();
     this.argentineValues();
     this.poundValues();
-
   }
 
   canadianValues() {
@@ -44,24 +41,16 @@ export class HomeComponent implements OnInit{
       this.valueCanadian = ask;
       this.valueCanadian = parseFloat(this.valueCanadian);
 
-
       const canadianVariation = valores.map((num) => num.varBid * 100);
       this. variationCanadian = canadianVariation;
       const variantionToInt = parseFloat(this.variationCanadian);
       this.variationCanadian = variantionToInt;
 
-
       const canadianUpdate = valores.map((num) => num.timestamp);
-
       const dateToString = canadianUpdate.toString();
-  
       const dateToInt = parseInt(dateToString);
-      
-      
       const date = new Date(dateToInt);  
-
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
-
       this.dateCanadian = dataHora;
     });
   }
@@ -80,15 +69,10 @@ export class HomeComponent implements OnInit{
       this.variationArgentine = variantionToInt;
 
       const argentineUpdate = valores.map((num) => num.timestamp);
-
       const dateToString = argentineUpdate.toString();
-  
       const dateToInt = parseInt(dateToString)
-      
       const date = new Date(dateToInt);  
-
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
-
       this.dateArgentine = dataHora;
     });
   }
@@ -107,20 +91,12 @@ export class HomeComponent implements OnInit{
       this.variationPound = variantionToInt;
 
       const poundUpdate = valores.map((num) => num.timestamp);
-
       const dateToString = poundUpdate.toString();
-  
       const dateToInt = parseInt(dateToString)
-      
       const date = new Date(dateToInt);  
-
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
-
       this.datePound = dataHora;
     });
-  }
-
-
-  
+  } 
 
 }
