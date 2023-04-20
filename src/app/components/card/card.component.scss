@@ -64,10 +64,18 @@
     align-items: center;
     text-align: center;
     color: #919191;
-    margin-top: 16px
+    margin-top: 16px;
   }
-  
 
+  &__footer-words {
+    font-weight: 600;
+    font-size: 24px;
+    align-items: center;
+    text-align: center;
+    color: #717171;
+  }
+
+  
   &__horizontal-line {
     border: 0.5px solid #CCCCCC;
   }

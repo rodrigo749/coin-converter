@@ -42,15 +42,21 @@ export class HomeComponent implements OnInit{
 
       const ask = valores.map((num) => num.ask);
       this.valueCanadian = ask;
+      this.valueCanadian = parseFloat(this.valueCanadian);
+
 
       const canadianVariation = valores.map((num) => num.varBid * 100);
-      this.variationCanadian = canadianVariation;
+      this. variationCanadian = canadianVariation;
+      const variantionToInt = parseFloat(this.variationCanadian);
+      this.variationCanadian = variantionToInt;
+
 
       const canadianUpdate = valores.map((num) => num.timestamp);
 
       const dateToString = canadianUpdate.toString();
   
-      const dateToInt = parseInt(dateToString)
+      const dateToInt = parseInt(dateToString);
+      
       
       const date = new Date(dateToInt);  
 
@@ -65,10 +71,13 @@ export class HomeComponent implements OnInit{
       const valores = Object.values(data);
 
       const ask = valores.map((num) => num.ask);
-      this.valueArgentine = ask;
+      this.valueArgentine = ask;  
+      this.valueArgentine = parseFloat(this.valueArgentine);
 
       const argentineVariation = valores.map((num) => num.varBid * 100);
       this.variationArgentine = argentineVariation;
+      const variantionToInt = parseFloat(this.variationArgentine);
+      this.variationArgentine = variantionToInt;
 
       const argentineUpdate = valores.map((num) => num.timestamp);
 
@@ -90,9 +99,12 @@ export class HomeComponent implements OnInit{
 
       const ask = valores.map((num) => num.ask);
       this.valuePound = ask;
+      this.valuePound = parseFloat(this.valuePound);
 
       const poundVariation = valores.map((num) => num.varBid * 100);
       this.variationPound = poundVariation;
+      const variantionToInt = parseFloat(this.variationPound);
+      this.variationPound = variantionToInt;
 
       const poundUpdate = valores.map((num) => num.timestamp);
 
