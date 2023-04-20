@@ -12,4 +12,9 @@ export class CardComponent {
   @Input() value = '';
   @Input() variation = '';
   @Input() update = '';
+
+  @Input() titleArgentine = '';
+  @Input() valueArgentine = '';
+  @Input() variationArgentine = '';
+  @Input() updateArgentine = '';
 }

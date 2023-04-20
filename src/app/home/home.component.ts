@@ -11,14 +11,19 @@ export class HomeComponent implements OnInit{
 
   titleCanadian = 'Dólar Canadense';
   titleArgentine = 'Peso Argentino';
-  titleLibra = 'Libra Esterlina'
+  titlePound = 'Libra Esterlina'
+
   valueCanadian: any;
-  valueArgentine: any;
   variationCanadian: any;
-  updateCanadian: any;
   dateCanadian: any;
-  arraySize: any;
-  arrayValues: any;
+
+  valueArgentine: any;
+  variationArgentine: any;
+  dateArgentine: any;
+
+  valuePound: any;
+  variationPound: any;
+  datePound: any;
 
   
   constructor(private http: HttpClient) { }
@@ -26,14 +31,14 @@ export class HomeComponent implements OnInit{
 
   ngOnInit() {
     this.canadianValues();
+    this.argentineValues();
+    this.poundValues();
 
   }
 
   canadianValues() {
     this.http.get('https://economia.awesomeapi.com.br/last/CAD-BRL').subscribe((data) => {
-      console.log(data);
       const valores = Object.values(data);
-      console.log(valores);
 
       const ask = valores.map((num) => num.ask);
       this.valueCanadian = ask;
@@ -42,20 +47,65 @@ export class HomeComponent implements OnInit{
       this.variationCanadian = canadianVariation;
 
       const canadianUpdate = valores.map((num) => num.timestamp);
-      console.log(canadianUpdate);
-      const canadianTimeStamp = canadianUpdate;
-      this.updateCanadian = canadianUpdate;
-      //console.log('updateCanadian', this.updateCanadian);
 
-      const timestamp = 1618882123000; 
-      const date = new Date(timestamp);  
-      //console.log('teste', date);
-      const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'full' });  
+      const dateToString = canadianUpdate.toString();
+  
+      const dateToInt = parseInt(dateToString)
+      
+      const date = new Date(dateToInt);  
 
-      //console.log(dataHora); 
+      const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
+
       this.dateCanadian = dataHora;
     });
-    
+  }
+
+  argentineValues() {
+    this.http.get('https://economia.awesomeapi.com.br/last/ARS-BRL').subscribe((data) => {
+      const valores = Object.values(data);
+
+      const ask = valores.map((num) => num.ask);
+      this.valueArgentine = ask;
+
+      const argentineVariation = valores.map((num) => num.varBid * 100);
+      this.variationArgentine = argentineVariation;
+
+      const argentineUpdate = valores.map((num) => num.timestamp);
+
+      const dateToString = argentineUpdate.toString();
+  
+      const dateToInt = parseInt(dateToString)
+      
+      const date = new Date(dateToInt);  
+
+      const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
+
+      this.dateArgentine = dataHora;
+    });
+  }
+
+  poundValues() {
+    this.http.get('https://economia.awesomeapi.com.br/last/GBP-BRL').subscribe((data) => {
+      const valores = Object.values(data);
+
+      const ask = valores.map((num) => num.ask);
+      this.valuePound = ask;
+
+      const poundVariation = valores.map((num) => num.varBid * 100);
+      this.variationPound = poundVariation;
+
+      const poundUpdate = valores.map((num) => num.timestamp);
+
+      const dateToString = poundUpdate.toString();
+  
+      const dateToInt = parseInt(dateToString)
+      
+      const date = new Date(dateToInt);  
+
+      const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
+
+      this.datePound = dataHora;
+    });
   }
 
 
