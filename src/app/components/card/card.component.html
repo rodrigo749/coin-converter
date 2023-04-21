@@ -3,9 +3,16 @@
         <div class="card__card-header">
             <div class="card__card-title"> {{ title }} </div>
         </div>
-        <div class="card__card-body">
+        <div *ngIf="isGreen" [ngStyle]="{'color':'#3C7649'}" class="card__card-body">
             <h4><b> R$ {{ value | number : '1.2-2'}} </b></h4>
         </div>
+        <div *ngIf="isBlue" [ngStyle]="{'color':'#3684CB'}" class="card__card-body">
+            <h4><b> R$ {{ value | number : '1.2-2'}} </b></h4>
+        </div>
+        <div *ngIf="isRed" [ngStyle]="{'color':'#DD4B4B'}" class="card__card-body">
+            <h4><b> R$ {{ value | number : '1.2-2'}} </b></h4>
+        </div>
+
         <div class="card__horizontal-line"></div>
         <div class="wrapper">
             <div class="card__footer-left">

@@ -25,6 +25,10 @@ export class HomeComponent implements OnInit{
   variationPound: any;
   datePound: any;
 
+  isBlue: boolean = false;;
+  isGreen: boolean = false;
+  isRed: boolean = false;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
@@ -32,6 +36,7 @@ export class HomeComponent implements OnInit{
     this.argentineValues();
     this.poundValues();
   }
+
 
   canadianValues() {
     this.http.get('https://economia.awesomeapi.com.br/last/CAD-BRL').subscribe((data) => {
@@ -52,6 +57,8 @@ export class HomeComponent implements OnInit{
       const date = new Date(dateToInt);  
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
       this.dateCanadian = dataHora;
+
+      this.isGreen = true;
     });
   }
 
@@ -74,6 +81,8 @@ export class HomeComponent implements OnInit{
       const date = new Date(dateToInt);  
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
       this.dateArgentine = dataHora;
+
+      this.isRed = true;
     });
   }
 
@@ -96,6 +105,8 @@ export class HomeComponent implements OnInit{
       const date = new Date(dateToInt);  
       const dataHora = date.toLocaleString('pt-BR', { timeStyle: 'medium' });  
       this.datePound = dataHora;
+
+      this.isBlue = true;
     });
   } 
 

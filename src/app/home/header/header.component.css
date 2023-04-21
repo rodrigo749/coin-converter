@@ -1,9 +1,14 @@
 
   .container {
+    position: fixed;
+    width: 100%;
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
+    top: 0;
+    left: 0;
 }
 
 .container img {

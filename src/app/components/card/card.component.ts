@@ -12,4 +12,7 @@ export class CardComponent {
   @Input() value = '';
   @Input() variation = '';
   @Input() update = '';
+  @Input() isBlue :boolean = false;
+  @Input() isGreen :boolean = false;
+  @Input() isRed :boolean = false;
 }
