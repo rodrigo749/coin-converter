@@ -29,12 +29,16 @@ export class HomeComponent implements OnInit{
   isGreen: boolean = false;
   isRed: boolean = false;
 
+  cachedData = null;
+
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
     this.canadianValues();
     this.argentineValues();
     this.poundValues();
+    this.fetchData();
+    setTimeout(this.fetchData, 3 * 60 * 1000);
   }
 
 
@@ -109,5 +113,32 @@ export class HomeComponent implements OnInit{
       this.isBlue = true;
     });
   } 
+
+  fetchData() {
+    // Faz a requisição usando fetch ou uma biblioteca como axios
+    fetch('https://economia.awesomeapi.com.br/last/CAD-BRL,ARS-BRL,GBP-BRL')
+      .then(response => response.json())
+      .then(data => {
+        // Armazena os dados em cache
+        this.cachedData = data;
+        console.log(this.cachedData);
+        
+        // Agendando a atualização do cache após 3 minutos
+       
+      });
+  }
+  
+  // Função que retorna os dados em cache ou faz uma nova requisição caso não haja dados em cache
+   getData() {
+    if (this.cachedData) {
+      console.log(this.cachedData)
+      return Promise.resolve(this.cachedData);
+      ;
+      
+    } else {
+      return this.fetchData();
+    }
+  }
+  
 
 }
