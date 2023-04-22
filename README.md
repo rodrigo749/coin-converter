@@ -1,6 +1,13 @@
-# CoinConverter
+# CoinConverter 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+
+This is a simple project to convert coins - This app can be access by the url: https://coin-converter-7fd9c.web.app
+This app is hosted for free on firebse hosting.
+
+## Install dependencies
+
+Run `npm install` to install dev dependencies
 
 ## Development server
 
