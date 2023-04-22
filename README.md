@@ -7,7 +7,7 @@ This app is hosted for free on firebse hosting.
 
 ## Install dependencies
 
-Run `npm install to install dev dependencies`
+Run `npm install` to install dev dependencies
 
 ## Development server
 
