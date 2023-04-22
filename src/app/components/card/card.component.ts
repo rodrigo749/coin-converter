@@ -7,7 +7,6 @@ import { Component, Output , Input} from '@angular/core';
 })
 export class CardComponent {
 
-
   @Input() title = '';
   @Input() value = '';
   @Input() variation = '';
@@ -15,4 +14,5 @@ export class CardComponent {
   @Input() isBlue :boolean = false;
   @Input() isGreen :boolean = false;
   @Input() isRed :boolean = false;
+  @Input() error :boolean = false;
 }
